@@ -55,33 +55,7 @@ export default function Layout({
                     }}
                     className="h-full max-h-[800px] items-stretch"
                   >
-                    <ResizablePanel
-                      defaultSize={12}
-                      collapsible={false}
-                      minSize={12}
-                      maxSize={12}
-                      onCollapse={() => {
-                        setIsCollapsed(true);
-                        document.cookie = `react-resizable-panels:collapsed=${JSON.stringify(
-                          isCollapsed,
-                        )}`;
-                      }}
-                      className={cn(
-                        isCollapsed &&
-                          "min-w-[50px] transition-all duration-300 ease-in-out",
-                      )}
-                    >
-                      {navbar}
-                    </ResizablePanel>
                     <ResizableHandle />
-                    <ResizablePanel defaultSize={32} minSize={25}>
-                      <ScrollArea
-                        className="h-screen"
-                        style={{ maxHeight: "calc(100vh - 5.5rem)" }}
-                      >
-                        <div className="py-4 px-2">{left}</div>
-                      </ScrollArea>
-                    </ResizablePanel>
                     <ResizableHandle withHandle />
                     <ResizablePanel defaultSize={56} minSize={35}>
                       <div className="p-8">{right}</div>
